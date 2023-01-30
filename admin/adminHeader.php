@@ -4,7 +4,7 @@
 ?>
        
  <!-- nav -->
- <nav  class="navbar navbar-expand-lg navbar-light px-5" style="background-color: #2c7a2a;">
+ <nav  class="navbar navbar-expand-lg navbar-light px-5" style="background-color: #0d57e0;">
     
     <a class="navbar-brand ml-5" href="./dashboard.php">
         <img src="./assets/images/logo.png" width="80" height="80" alt="Swiss Collection">

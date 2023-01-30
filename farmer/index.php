@@ -36,8 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($num == 0) {
       if(($password == $cpassword) && $exists==false) {
   
-          $hash = password_hash($password, PASSWORD_DEFAULT);
-              
+          $hash = md5($password);
           // Password Hashing is used here. 
           $sql = "INSERT INTO farmer VALUES ('$farmerid','$username','$phoneno','$address','$hash', current_timestamp())";
   
@@ -48,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           }
       } 
       else { 
-        echo '<script>alert("Welcome to vegmanage ")</script>'; 
+        echo '<script>alert("error ")</script>'; 
       }      
   }
   
@@ -61,7 +60,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   </head>
   <body>
   <div class="error">
-  <?php
+ 
+  </div>
+    <section>
+      
+      <div class="container">
+        <div class="user login">
+          
+          <div class="img-box">
+            <img src="./images/farmer02.jpg" alt="" />
+          </div>
+          <div class="form-box">
+            <div class="top">
+              <p>
+                Not a member?
+                <span data-id="#ff0066">Register now</span>
+              </p>
+            </div>
+            <?php  
+                if(isset($_GET["action"]) == "login")  
+                
+                ?> 
+            <form method="POST" action="login.php <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+              <div class="form-control">
+                <h2>Hello Farmer</h2>
+                <p>Welcome back you've been missed.</p>
+                <?php
     
     if($showAlert) {
     
@@ -103,33 +127,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
      }
    
 ?>
-  </div>
-    <section>
-      
-      <div class="container">
-        <div class="user login">
-          
-          <div class="img-box">
-            <img src="./images/farmer02.jpg" alt="" />
-          </div>
-          <div class="form-box">
-            <div class="top">
-              <p>
-                Not a member?
-                <span data-id="#ff0066">Register now</span>
-              </p>
-            </div>
-            <?php  
-                if(isset($_GET["action"]) == "login")  
-                
-                ?> 
-            <form method="POST" action="login.php <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-              <div class="form-control">
-                <h2>Hello Farmer</h2>
-                <p>Welcome back you've been missed.</p>
-                <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
-                <?php } ?>
                 <input type="text" placeholder="Enter Username" name="username"/>
                 <div>
                   <input type="password" placeholder="Password" name="password"/>
@@ -139,6 +136,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <span>Recovery Password</span>
                 <input type="Submit" value="Login" />
+                <p><a href="../grocery/index.php">Back To Grocery</a></p>
               </div>
               <div class="form-control">                
               </div>

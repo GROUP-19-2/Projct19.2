@@ -33,7 +33,7 @@
         if($num == 0) {
           if(($password == $cpassword) && $exists==false) {
       
-              $hash = password_hash($password, PASSWORD_DEFAULT);
+              $hash = md5($password);
                   
               // Password Hashing is used here. 
               $sql = "INSERT INTO store_owner VALUES ('$storid','$username','$phoneno','$address','$hash', current_timestamp())";
@@ -57,7 +57,26 @@
     ?>
   </head>
   <body>
-  <?php
+  
+    <section>
+      
+      <div class="container">
+        <div class="user login">
+          <div class="img-box">
+            <img src="./images/gro.jpg" alt="" />
+          </div>
+          <div class="form-box">
+            <div class="top">
+              <p>
+                Not a member?
+                <span data-id="#ff0066">Register now</span>
+              </p>
+            </div>
+            <form method="post"  action="login.php <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+              <div class="form-control">
+                <h2>Hello grocery Owner</h2>
+                <p>Welcome back you've been missed.</p>
+                <?php
     
     if($showAlert) {
     
@@ -99,24 +118,6 @@
      }
    
 ?>
-    <section>
-      
-      <div class="container">
-        <div class="user login">
-          <div class="img-box">
-            <img src="./images/gro.jpg" alt="" />
-          </div>
-          <div class="form-box">
-            <div class="top">
-              <p>
-                Not a member?
-                <span data-id="#ff0066">Register now</span>
-              </p>
-            </div>
-            <form method="post"  action="login.php <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-              <div class="form-control">
-                <h2>Hello grocery Owner</h2>
-                <p>Welcome back you've been missed.</p>
                 <input type="text" placeholder="Enter Username" name="username" />
                 <div>
                   <input type="password" placeholder="Password" name="password" />
@@ -126,6 +127,7 @@
                 </div>
                 <span>Recovery Password</span>
                 <input type="Submit" value="Login" />
+                <p><a href="../farmer/index.php">Back To Farmer</a></p>
               </div>
               <div class="form-control">                
               </div>

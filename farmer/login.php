@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Look up the user in the database
   $query = "SELECT password FROM farmer WHERE User_name = '$email'";
   $result = $db->query($query);
+  
   if ($result->num_rows == 0) {
     // No user was found with that email
     echo '<script>alert("Incorrect User Name")</script>';
@@ -25,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     // A user was found with that email, verify the password
     $row = $result->fetch_assoc();
-    if (password_verify($password, $row["password"])) {
+  
+    if (md5($password, $row["password"])) {
       // The password is correct, log the user in
       session_start();
       $_SESSION["logged_in"] = true;
@@ -36,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       exit;
     } else {
       // The password is incorrect
+      header("Location: /groupproject/farmer/index.php");
       echo '<script>alert("Incorrect Password")</script>';
     }
   }

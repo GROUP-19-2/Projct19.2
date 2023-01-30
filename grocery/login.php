@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     // A user was found with that email, verify the password
     $row = $result->fetch_assoc();
-    if (password_verify($password, $row["password"])) {
+    if (md5($password, $row["password"])) {
       // The password is correct, log the user in
       session_start();
       $_SESSION["logged_in"] = true;

@@ -1,22 +1,21 @@
 
 <div >
-  <h2>Add Vegetables</h2>
+  <h2>Product Items</h2>
   <table class="table ">
     <thead>
       <tr>
         <th class="text-center">S.N.</th>
-        <th class="text-center">Vegetables Image</th>
-        <th class="text-center">Vegetables Name</th>
-        <th class="text-center">Vegetables Description</th>
+        <th class="text-center">Product Image</th>
+        <th class="text-center">Product Name</th>
+        <th class="text-center">Product Description</th>
         <th class="text-center">Category Name</th>
-        <th class="text-center">Vegetables Price per 1KG</th>
+        <th class="text-center">Unit Price</th>
         <th class="text-center" colspan="2">Action</th>
       </tr>
     </thead>
     <?php
       include_once "../config/dbconnect.php";
-      session_start();
-      $sql="SELECT * from product, category WHERE product.category_id=category.category_id and username =  '{$_SESSION['User_name']}' ";
+      $sql="SELECT * from product, category WHERE product.category_id=category.category_id ";
       $result=$conn-> query($sql);
       $count=1;
       if ($result-> num_rows > 0){
@@ -41,7 +40,7 @@
 
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-secondary " style="height:40px" data-toggle="modal" data-target="#myModal">
-    Add Vegetable
+    Add Product
   </button>
 
   <!-- Modal -->
@@ -51,17 +50,17 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">New Product Item</h4>
+          <h4 class="modal-title">New Vegetable</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form  enctype='multipart/form-data' onsubmit="addItems()" method="POST">
             <div class="form-group">
-              <label for="name">Vegetables Name:</label>
+              <label for="name">Product Name:</label>
               <input type="text" class="form-control" id="p_name" required>
             </div>
             <div class="form-group">
-              <label for="price">Vegetables Price per 1KG:</label>
+              <label for="price">Price:</label>
               <input type="number" class="form-control" id="p_price" required>
             </div>
             <div class="form-group">
@@ -90,7 +89,7 @@
                 <input type="file" class="form-control-file" id="file">
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Add Vegetable</button>
+              <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Add Item</button>
             </div>
           </form>
 
