@@ -15,7 +15,7 @@
 
 
     
-        $location="./uploads/";
+        $location="../uploads/";
         $image=$location.$name;
 
         $target_dir="../uploads/";

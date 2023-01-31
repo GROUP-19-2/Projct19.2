@@ -1,15 +1,15 @@
 
 <div >
-  <h2>Product Items</h2>
+  <h2>Vegetables</h2>
   <table class="table ">
     <thead>
       <tr>
         <th class="text-center">S.N.</th>
-        <th class="text-center">Product Image</th>
-        <th class="text-center">Product Name</th>
-        <th class="text-center">Product Description</th>
+        <th class="text-center">Vegetables Image</th>
+        <th class="text-center">Vegetables Name</th>
+        <th class="text-center">Vegetables Description</th>
         <th class="text-center">Category Name</th>
-        <th class="text-center">Unit Price</th>
+        <th class="text-center">Unit Price per Kg</th>
         <th class="text-center" colspan="2">Action</th>
       </tr>
     </thead>
@@ -56,7 +56,7 @@
         <div class="modal-body">
           <form  enctype='multipart/form-data' onsubmit="addItems()" method="POST">
             <div class="form-group">
-              <label for="name">Product Name:</label>
+              <label for="name">Vegetable Name:</label>
               <input type="text" class="form-control" id="p_name" required>
             </div>
             <div class="form-group">
