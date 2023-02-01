@@ -147,18 +147,18 @@
             <form method="POST" action="index.php">
               <div class="form-control">
                 <h2>Welcome Owner</h2>
-                <input type="text" placeholder="User Name" name="username" />
+                <input type="text" placeholder="User Name" name="username" required/>
                 <input type="text" placeholder="Store ID" name="storid" />
-                <input type="text" placeholder="Phone Number" name="phoneno">
-                <input type="text" placeholder="Address" name="address">
+                <input type="tel" id="myform_phone" name="phone" pattern="^(07|\+94)[0-9]{8}$"  name="phoneno" placeholder="Phone Number(07XXXXXXXX)" required/>
+                <input type="text" placeholder="Address" name="address" required/>
                 <div>
-                  <input type="password" placeholder="Password" name="password" />
+                  <input type="password" placeholder="Password" name="password" required/>
                   <div class="icon form-icon">
                     <img src="./images/eye.svg" alt="" />
                   </div>
                 </div>
                 <div>
-                  <input type="password" placeholder="Confirm Password" name="cpassword" />
+                  <input type="password" placeholder="Confirm Password" name="cpassword" required/>
                   <div class="icon form-icon">
                     <img src="./images/eye.svg" alt="" />
                   </div>

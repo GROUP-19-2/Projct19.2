@@ -158,23 +158,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <form  method="POST" action="index.php">
               <div class="form-control">
                 <h2>Welcome Farmer</h2>
-                <input type="text" name="username" placeholder="User Name" />
-                <input type="text" name="farmerid" placeholder="Farmer Id" />
-                <input type="text" name="phoneno" placeholder="Phone Number">
-                <input type="text" name="address" placeholder="Address">
+                <input type="text" name="username" placeholder="User Name" required/>
+                <input type="text" name="farmerid" placeholder="Farmer Id" required />
+                <input type="tel" id="myform_phone" name="phone" pattern="^(07|\+94)[0-9]{8}$"  name="phoneno" placeholder="Phone Number(07XXXXXXXX)" required/>
+                <input type="text" name="address" placeholder="Address" required/>
                 <div>
-                  <input type="password" placeholder="Password" id="password" />
+                  <input type="password" placeholder="Password" id="password"required />
                   <div class="icon form-icon">
                     <img src="./images/eye.svg" alt="" />
                   </div>
                 </div>
                 <div>
-                  <input type="password" placeholder="Confirm Password" id="cpassword" />
+                  <input type="password" placeholder="Confirm Password" id="cpassword"required />
                   <div class="icon form-icon">
                     <img src="./images/eye.svg" alt="" />
                   </div>
                 </div>
-                <input type="Submit" value="Register" />
+                <input type="Submit" value="Register" class="Register" />
               </div>
               <div class="form-control">
                 

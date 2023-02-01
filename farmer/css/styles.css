@@ -292,3 +292,12 @@ section .container.active .login .img-box {
 .error{
   text-align: center;
 }
+.error
+{
+  color: red;
+  size: 80%
+}
+.hidden
+{
+  display:none;
+}
