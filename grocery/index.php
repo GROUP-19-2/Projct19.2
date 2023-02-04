@@ -29,6 +29,8 @@
         $sql = "Select * from store_owner where User_name='$username'";
         $result = mysqli_query($conn, $sql);
         $num = mysqli_num_rows($result); 
+        $unique_id = rand(time(), 10000); 
+
         
         if($num == 0) {
           if(($password == $cpassword) && $exists==false) {
@@ -36,7 +38,7 @@
               $hash = md5($password);
                   
               // Password Hashing is used here. 
-              $sql = "INSERT INTO store_owner VALUES ('$storid','$username','$phoneno','$address','$hash', current_timestamp())";
+              $sql = "INSERT INTO store_owner VALUES ('$unique_id','$storid','$username','$phoneno','$address','$hash', current_timestamp())";
       
               $result = mysqli_query($conn, $sql);
       

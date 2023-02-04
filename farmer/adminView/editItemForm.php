@@ -7,10 +7,11 @@
             <th>User Name</th>
             <th>Phone No</th>
             <th>Address</th>
+            <th>Chat</th>
+
         </tr>
     </thead>
 
-<h4>Contact Info</h4>
 <?php
     include_once "../config/dbconnect.php";
 	$ID=$_POST['record'];
@@ -35,6 +36,10 @@
           <td><?=$row['User_name']?></td>
           <td><?=$row['Phone_no']?></td>
           <td><?=$row['Address']?></td>
+          <td><button class="btn btn-primary" style="height:40px" onclick="window.location.href='../chat/check.php';" ><i class="fa fa-whatsapp" aria-hidden="true"></i>Live Chat </button></td>
+
+
+          
 
         </tr>
 </table>

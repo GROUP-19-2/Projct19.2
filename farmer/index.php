@@ -32,13 +32,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "Select * from farmer where User_name='$username'";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result); 
+
+    $unique_id = rand(time(), 10000); 
     
     if($num == 0) {
       if(($password == $cpassword) && $exists==false) {
   
           $hash = md5($password);
           // Password Hashing is used here. 
-          $sql = "INSERT INTO farmer VALUES ('$farmerid','$username','$phoneno','$address','$hash', current_timestamp())";
+          $sql = "INSERT INTO farmer VALUES ('$unique_id','$farmerid','$username','$phoneno','$address','$hash', current_timestamp())";
   
           $result = mysqli_query($conn, $sql);
   

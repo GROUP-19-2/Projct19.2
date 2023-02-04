@@ -18,7 +18,7 @@
     <button class="openbtn" onclick="openNav()"><i class="fa fa-home"></i>Home</button>
    <button class="openbtn" onclick="showProductItems()" ><i class="fa fa-th"></i>Vegetables </button>
    <button class="openbtn" onclick="showCustomers()" ><i class="fa fa-users"></i> grocery </button>
-
+   <button class="openbtn" onclick="window.location.href='../chat/check.php';" ><i class="fa fa-whatsapp" aria-hidden="true"></i>Live Chat </button>
 </div>
 
 

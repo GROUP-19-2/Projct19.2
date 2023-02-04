@@ -10,11 +10,16 @@
     <a href="#customers"  onclick="showCustomers()" ><i class="fa fa-users"></i> Farmers</a>
     <a href="#category"   onclick="showCategory()" ><i class="fa fa-th-large"></i> Category </a>
     <a href="#products"   onclick="showProductItems()" ><i class="fa fa-th"></i> Vegetables</a>
+
   
 </div>
  
 <div id="main">
     <button class="openbtn" onclick="openNav()"><i class="fa fa-home"></i></button>
+    <button class="openbtn" onclick="window.location.href='../chat/check.php';" ><i class="fa fa-whatsapp" aria-hidden="true"></i>Live Chat </button>
+
+
+
 </div>
 
 

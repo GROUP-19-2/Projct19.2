@@ -18,7 +18,7 @@
         $location="../uploads/";
         $image=$location.$name;
 
-        $target_dir="../uploads/";
+        $target_dir="../../uploads/";
         $finalImage=$target_dir.$name;
 
         move_uploaded_file($temp,$finalImage);

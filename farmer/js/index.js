@@ -46,3 +46,9 @@ phone_input.addEventListener('invalid', () => {
     phone_input.setCustomValidity('Enter phone number in this format: 123-456-7890');
   }
 });
+
+
+function validatePhoneNumber(phone) {
+  var re = /^\d{10}$/;
+  return re.test(phone);
+}

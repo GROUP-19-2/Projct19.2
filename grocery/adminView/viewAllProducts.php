@@ -16,7 +16,7 @@
     <?php
       include_once "../config/dbconnect.php";
       session_start();
-      $sql="SELECT * from product, category WHERE product.category_id=category.category_id and username =  '{$_SESSION['User_name']}' ";
+      $sql="SELECT * from product, category WHERE product.category_id=category.category_id and username =  '{$_SESSION['User_name']}' ORDER BY Product_name Desc ";
       $result=$conn-> query($sql);
       $count=1;
       if ($result-> num_rows > 0){

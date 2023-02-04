@@ -301,3 +301,6 @@ section .container.active .login .img-box {
 {
   display:none;
 }
+a{
+  color:azure;
+}
