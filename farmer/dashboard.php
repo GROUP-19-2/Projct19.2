@@ -1,8 +1,20 @@
 <?php
-include('connect.php');
 session_start();
+
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
+  // Last request was more than 10 minutes ago
+  session_unset();     // Unset session data
+  session_destroy();   // Destroy session
+  header("Location: /groupproject/farmer/index.php");
+  exit;
+}
+
+$_SESSION['LAST_ACTIVITY'] = time(); // Update last activity time stamp
+?>
+<?php
+include('connect.php');
 if (!isset($_SESSION['User_name']))
-    header("Location: /groupproject/grocery/index.php"); 
+    header("Location: /groupproject/farmer/index.php"); 
 else{
 }
 ?>

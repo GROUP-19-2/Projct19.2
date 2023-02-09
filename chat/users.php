@@ -1,5 +1,17 @@
+<?php
+session_start();
+
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
+  // Last request was more than 10 minutes ago
+  session_unset();     // Unset session data
+  session_destroy();   // Destroy session
+  header("Location: /groupproject/index.html");
+  exit;
+}
+
+$_SESSION['LAST_ACTIVITY'] = time(); // Update last activity time stamp
+?>
 <?php 
-  session_start();
   include_once "php/config.php";
   if(!isset($_SESSION['unique_id'])){
     header("location: login.php");

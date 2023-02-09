@@ -16,7 +16,7 @@
  
 <div id="main">
     <button class="openbtn" onclick="openNav()"><i class="fa fa-home"></i></button>
-    <button class="openbtn" onclick="window.location.href='../chat/check.php';" ><i class="fa fa-whatsapp" aria-hidden="true"></i>Live Chat </button>
+    <button class="openbtn" onclick="window.location.href='../chat/checkstor.php';" ><i class="fa fa-whatsapp" aria-hidden="true"></i>Live Chat </button>
 
 
 

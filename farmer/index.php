@@ -16,6 +16,8 @@
 $showAlert = false; 
 $showError = false; 
 $exists=false;
+
+
     
 if($_SERVER["REQUEST_METHOD"] == "POST") {
       
@@ -162,7 +164,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Welcome Farmer</h2>
                 <input type="text" name="username" placeholder="User Name" required/>
                 <input type="text" name="farmerid" placeholder="Farmer Id" required />
-                <input type="tel" id="myform_phone" name="phone" pattern="^(07|\+94)[0-9]{8}$"  name="phoneno" placeholder="Phone Number(07XXXXXXXX)" required/>
+                <input type="tel" id="myform_phone"pattern="^(07|\+94)[0-9]{8}$"  name="phoneno" placeholder="Phone Number(07XXXXXXXX)" required/>
                 <input type="text" name="address" placeholder="Address" required/>
                 <div>
                   <input type="password" placeholder="Password" id="password"required />

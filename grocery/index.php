@@ -151,7 +151,7 @@
                 <h2>Welcome Owner</h2>
                 <input type="text" placeholder="User Name" name="username" required/>
                 <input type="text" placeholder="Store ID" name="storid" />
-                <input type="tel" id="myform_phone" name="phone" pattern="^(07|\+94)[0-9]{8}$"  name="phoneno" placeholder="Phone Number(07XXXXXXXX)" required/>
+                <input type="tel" id="myform_phone"  pattern="^(07|\+94)[0-9]{8}$"  name="phoneno" placeholder="Phone Number(07XXXXXXXX)" required/>
                 <input type="text" placeholder="Address" name="address" required/>
                 <div>
                   <input type="password" placeholder="Password" name="password" required/>
